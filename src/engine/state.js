@@ -88,6 +88,7 @@ export function createRun({ seed, name, gender, originId, rootId, meta = {} }) {
     char,
     flags: { ...(origin.flags || {}) },
     counters: { roots_seen: rootsSeen.length },
+    recent: [],
     achievements: {},
     endings: {},
     buffs,
