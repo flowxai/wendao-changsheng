@@ -90,9 +90,17 @@ export function pickEvent(state, rng, game, kind = 'wild') {
     return true;
   });
   if (!pool.length) return null;
+  // 近期去重：避免连着抽到同一个节点，池子够大时才生效
+  const recent = state.recent || [];
+  let candidates = pool.filter((ev) => !recent.includes(ev.id));
+  if (candidates.length < Math.min(6, pool.length)) candidates = pool;
   // 气运影响稀有事件（tier 高）的权重
   const luck = 1 + state.char.attrs.气运 * 0.02;
-  return rng.weighted(pool, (ev) => (ev.weight || 1) * (ev.tier && ev.tier >= 4 ? luck : 1));
+  const picked = rng.weighted(candidates, (ev) => (ev.weight || 1) * (ev.tier && ev.tier >= 4 ? luck : 1));
+  if (picked) {
+    state.recent = [picked.id, ...recent.filter((id) => id !== picked.id)].slice(0, 12);
+  }
+  return picked;
 }
 
 export function buildHub(game) {
