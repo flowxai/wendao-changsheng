@@ -10,7 +10,8 @@
     "test:ui": "node tests/ui.spec.mjs",
     "validate": "node tests/validate.mjs",
     "simulate": "node tests/simulate.mjs 12",
-    "test:all": "node --test tests/engine.test.mjs && node tests/validate.mjs"
+    "test:all": "node --test tests/engine.test.mjs && node tests/validate.mjs",
+    "build": "node scripts/build-single.mjs"
   },
   "keywords": [
     "ink",
