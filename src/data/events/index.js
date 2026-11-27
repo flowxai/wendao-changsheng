@@ -5,6 +5,7 @@ import { INNER_EVENTS } from './inner.js';
 import { STORY_EVENTS, STORY_TRIGGERS } from './story.js';
 import { WILD_EXPANSION } from './expansion_wild.js';
 import { SECT_EXPANSION } from './expansion_sect.js';
+import { HIGH_EXPANSION } from './expansion_high.js';
 
 export const ALL_EVENTS = [
   ...WILD_EVENTS,
@@ -14,6 +15,7 @@ export const ALL_EVENTS = [
   ...STORY_EVENTS,
   ...WILD_EXPANSION,
   ...SECT_EXPANSION,
+  ...HIGH_EXPANSION,
 ];
 
 export { STORY_TRIGGERS };
