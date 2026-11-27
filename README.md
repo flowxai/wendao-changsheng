@@ -6,13 +6,15 @@
 
 ## 怎么玩
 
-三种方式，任选其一：
+**最快**：下载 [Release 单文件版](https://github.com/flowxai/wendao-changsheng/releases/download/v1.0.0/wendao-changsheng.html) → 双击 → 浏览器打开即可。离线可玩，存档在本地。
 
-1. **单文件版（最简单）**：下载 [`dist/wendao-changsheng.html`](dist/wendao-changsheng.html)，双击用浏览器打开。整个游戏（引擎 + 27 万字体量内容）都在这一个文件里，离线可玩。
-2. **源码版**：`npm run serve`，访问 <http://127.0.0.1:4173>。
-3. **GitHub Pages**：仓库已包含 `.github/workflows/pages.yml`，在 Settings → Pages 选择 GitHub Actions 即自动部署。
+其他方式：
 
-> 单文件版由 `npm run build` 生成（bun 打包 + CSS/JS 内联），运行时零依赖。
+- 仓库内单文件：[`dist/wendao-changsheng.html`](dist/wendao-changsheng.html)（右键另存为，`npm run build` 可重新生成）
+- 源码：`npm run serve` → <http://127.0.0.1:4173>
+- GitHub Pages：仓库带 `.github/workflows/pages.yml`，在 Settings → Pages 选择 GitHub Actions 即自动部署（fork 后同样适用）
+
+> 单文件版由 bun 打包并把 CSS/JS 内联，运行时零依赖；源码版是无构建的 ES module，方便改内容。
 
 ## 它是什么
 
